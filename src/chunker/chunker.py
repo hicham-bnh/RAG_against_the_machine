@@ -37,7 +37,7 @@ class Chunker:
                 file_path=file,
                 content=chunk.page_content,
                 first_character_index=first,
-                last_character_indext_index=last
+                last_character_index=last
             ))
             position = last
         return result
@@ -59,7 +59,7 @@ class Chunker:
                 file_path=file,
                 content=chunk.page_content,
                 first_character_index=first,
-                last_character_indext_index=last
+                last_character_index=last
             ))
             position = last
         return result
