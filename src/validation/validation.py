@@ -40,3 +40,10 @@ class StudentSearchResults(BaseModel):
 
 class StudentSearchResultsAndAnswer(StudentSearchResults):
     search_results: List[MinimalAnswer]    # type: ignore[assignment]
+
+
+class Chunk(BaseModel):
+    file_path: str
+    content: str
+    first_character_index: int
+    last_character_indext_index: int
