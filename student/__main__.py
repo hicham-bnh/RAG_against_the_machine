@@ -150,4 +150,7 @@ class Student:
 
 
 if __name__ == "__main__":
-    fire.Fire(Student)
+    try:
+        fire.Fire(Student)
+    except Exception as e:
+        print(e)
