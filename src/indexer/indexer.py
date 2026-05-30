@@ -1,6 +1,6 @@
 import bm25s
 import json
-import os
+from src.validation.validation import Chunk
 from pathlib import Path
 
 
@@ -17,3 +17,10 @@ class Indexer:
         with open("data/processed/chunks/chunks.json", "w") as fd:
             data = [chunk.model_dump() for chunk in chunks]
             json.dump(data, fd)
+
+    def load(self):
+        index = bm25s.BM25.load("data/processed/bm25_index")
+        with open("data/processed/chunks/chunks.json", "r") as fd:
+            data = json.load(fd)
+        chunks = [Chunk(** d) for d in data]
+        return index, chunks
