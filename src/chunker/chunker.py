@@ -9,9 +9,9 @@ class Chunker:
     def __init__(self) -> None:
         pass
 
-    def chunk_data(self, chunk_size: int = 2000) -> List:
+    def chunk_data(self,path: str, chunk_size: int = 2000) -> List:
         result = []
-        directory = Path("data/raw/vllm-0.10.1")
+        directory = Path(path)
         files = [file for file in directory.rglob('*') if file.is_file()]
         for file in files:
             if file.suffix == ".py":

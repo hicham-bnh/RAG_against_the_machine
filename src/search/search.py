@@ -7,7 +7,7 @@ class Search:
     def __init__(self) -> None:
         pass
 
-    def search(self, qst: str, k: int, retrieve, chunks):
+    def search(self, qst: str, k: int, chunks, retrieve):
         result = []
         qst_token = bm25s.tokenize([qst])
         results, scores = retrieve.retrieve(qst_token, k=k)

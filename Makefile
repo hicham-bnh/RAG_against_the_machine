@@ -1,5 +1,4 @@
 PYTHON = python3.10
-MAIN_SCRIPT = main.py
 PROJECT_NAME = RAG
 UV = uv
 REQUIREMENTS = requirements
@@ -22,7 +21,7 @@ install:
 	$(UV) sync
 
 run:
-	$(UV) run python -m src
+	$(UV) run python -m student
 
 debug:
 	$(PYTHON) -m pdb $(MAIN_SCRIPT) $(FILE)
