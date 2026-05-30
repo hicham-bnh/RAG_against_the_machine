@@ -6,10 +6,10 @@ from src.validation.validation import Chunk
 
 
 class Chunker:
-    def __init__(self) -> None:
-        pass
-
-    def chunk_data(self,path: str, chunk_size: int = 2000) -> List:
+    def chunk_data(self, path: str, chunk_size: int = 2000) -> List:
+        """
+        chunker of document files
+        """
         result = []
         directory = Path(path)
         files = [file for file in directory.rglob('*') if file.is_file()]
@@ -21,6 +21,9 @@ class Chunker:
         return result
 
     def chunk_code(self, file: str, size: int) -> List:
+        """
+        chunker of pythonn files
+        """
         with open(file, 'r', encoding="utf-8", errors="ignore") as fd:
             data = fd.read()
         result = []
@@ -43,6 +46,9 @@ class Chunker:
         return result
 
     def chunk_doc(self, file: str, size: int) -> List:
+        """
+        chunker files and choose the method for the required file
+        """
         with open(file, 'r', encoding="utf-8", errors="ignore") as fd:
             data = fd.read()
         result = []
